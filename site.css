@@ -1,0 +1,110 @@
+*{margin:0;padding:0}
+body{ font-family:arial}
+
+#nav {
+    float: left;
+    width: 100%;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+}
+#nav li a {
+    display: block;
+    padding: 10px 15px;
+    background: #ccc;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #999;
+    text-decoration: none;
+    color: #000;
+}
+#nav li a:hover, #nav li a.active {
+    background: #999;
+    color: #fff;
+}
+#nav li ul {
+    display: none;
+}
+#nav li ul li a {
+    padding: 10px 25px;
+    background: #ececec;
+    border-bottom: 1px dotted #ccc;
+}
+
+ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  h2 {
+    text-align: center;
+    margin: 20px auto;
+    color: #fff;
+  }
+  
+  .accordion-menu {
+    width: auto;
+    max-width: 250px;
+    background: #fff;
+    border-radius: 4px;
+  }
+  
+  .accordion-menu li.open .dropdownlink {
+    color: black;
+  }
+  .accordion-menu li.open .dropdownlink .fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  
+  .accordion-menu li:last-child .dropdownlink {
+    border-bottom: 0;
+  }
+  
+  .dropdownlink {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 45px;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    color: #212121;
+    position: relative;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+  }
+  .dropdownlink i {
+    position: absolute;
+    top: 17px;
+    left: 16px;
+  }
+  .dropdownlink .fa-chevron-down {
+    right: 12px;
+    left: auto;
+  }
+  
+  .submenuItems {
+    display: none;
+    text-decoration: none;
+  }
+  .submenuItems li {
+    border-bottom: 1px solid #B6B6B6;
+  }
+  
+  .submenuItems a {
+    display: block;
+    color: #727272;
+    padding: 12px 12px 12px 45px;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+  }
+  .submenuItems a:hover {
+    color: black;
+  }
+
+  .scrollable-menu {
+    height: auto;
+    max-height: 350px;
+    overflow-x: hidden;
+}
