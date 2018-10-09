@@ -1,0 +1,1601 @@
+<html>
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="site.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Masraff API v1.1</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <div id="content">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+			<div class="navbar-header pull-right">
+				<ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Version <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="apiv1.html">Version 1</a></li>
+            <li><a href="apiv1.1.html">Version 1.1</a></li>
+          </ul>
+        </li>
+      </ul>
+				</div>
+                <div class="navbar-header pull-left">
+                    <a class="navbar-brand" href="#">Masraff API Doc v1.1</a>
+                </div>
+				
+            </div>
+        </nav>
+        <div id="content" class="container-fluid fill">
+            <div class="row">
+                <!--left menu-->
+                <div class="col-lg-2 col-md-3 col-sm-3">
+                    <div style="position: fixed !important;width: auto;height:100%;max-width: 200px;margin-top: 2%;">
+                        <div style="text-align: center">
+                            <img src="masraff.png" width="200" height="150">
+                        </div>
+                        <ul class="accordion-menu scrollable-menu" role="menu">
+                            <li>
+                                <div class="dropdownlink">
+                                    <a href="#" onclick="clickSample('#Introduction')" style="color:black"> Introduction</a>
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdownlink">
+                                    <a href="#" onclick="clickSample('#Authentication')" style="color:black"> Authentication</a>
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdownlink">
+                                    <i class="fa fa-quote-left" aria-hidden="true"></i> Expenses
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                                <ul class="submenuItems">
+                                    <li>
+                                        <a href="#Metadata" onclick="clickSample('#Metadata')">Get Expenses Metadata For Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="clickSample('#MetadataSubCompany')">Get Expenses Metadata For SubCompany</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="clickSample('#SpecificExpense')">Get a Specific Expense Details</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="clickSample('#ExpenseTransfer')">Mark a Specific Expense Transfered</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="clickSample('#GetUsersExpenses')">Get Expenses Of User</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                    <div class="dropdownlink">
+                                        <a href="#" onclick="clickSample('#Reports')" style="color:black"> Expense Form</a>
+                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                    </div>
+                                </li>
+                            <li>
+                                <div class="dropdownlink">
+                                    <i class="fa fa-quote-left" aria-hidden="true"></i> Tags
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                                <ul class="submenuItems">
+                                    <li>
+                                        <a href="#" onclick="clickSample('#MetadataTags')">Get Tags Metadata For Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="clickSample('#CreateTags')">Create Tags Of Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="clickSample('#UpdateTags')">Update Tags Of Company</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="dropdownlink">
+                                    <i class="fa fa-quote-left" aria-hidden="true"></i> SubCompanies
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                                <ul class="submenuItems">
+                                    <li>
+                                        <a href="#" onclick="clickSample('#MetadataSubCompanies')">Get SubCompanies Metadata For Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="clickSample('#CreateSubCompanies')">Create SubCompanies Of Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="clickSample('#UpdateSubCompanies')">Update SubCompanies Of Company</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="dropdownlink">
+                                    <i class="fa fa-quote-left" aria-hidden="true"></i> ExpenseTypes
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                                <ul class="submenuItems">
+                                    <li>
+                                        <a href="#" onclick="clickSample('#MetadataExpenseTypes')">Get ExpenseTypes Metadata For Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="clickSample('#CreateExpenseTypes')">Create ExpenseTypes Of Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="clickSample('#UpdateExpenseTypes')">Update ExpenseTypes Of Company</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                    <div class="dropdownlink">
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i> Users
+                                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                    </div>
+                                    <ul class="submenuItems">
+                                        <li>
+                                            <a href="#" onclick="clickSample('#GetUsers')">Get Users For Company</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="clickSample('#CreateUsers')">Create Users Of Company</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="clickSample('#UserSubCompany')">Add User in SubCompany</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                        </ul>
+                        <div style="font-size: 12px; width: 100%;text-align: center;">
+                                <code><a href="mailto:info@masraff.co">Ask for a Developer Key </a></code>
+                            </div>
+                    </div>
+                </div>
+                <!--page righ container-->
+                <div id="main" class="col-lg-10 col-md-9 col-sm-9 fill" style="margin-top: 5%;">
+
+                    <div class="panel panel-default" id="Introduction">
+                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Introduction</div>
+                        <div class="panel-body">
+                            <p>Welcome to the Masraff API! You can use our API to access masraff endpoints, which can get information
+                                on expense details.</p>
+                            <p>If you have any questions please feel free to use</p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default" id="Authentication">
+                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Authentication</div>
+                        <div class="panel-body">
+                            <p>Masraff uses API keys to allow access to the API. You can request for a new key by mailing
+                                <code>info@masraff.co</code>
+                            </p>
+                            <p>Masraff expects for the API key to be included in all API requests to the server in a header
+                                that looks like the following:</p>
+                            <p>
+                                <code>Authorization: yourMasraffApiKey</code>
+                            </p>
+                        </div>
+                        <div class="panel-body">
+                            <p>To authorize, use this code:</p>
+                            <code># With shell, you can just pass the correct header with each request</code>
+                            <p>curl
+                                <code>"api_endpoint_here"</code>
+                            </p>
+                            <p> -H
+                                <code>"Authorization: yourMasraffApiKey"</code>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default" id="Expenses">
+                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Expenses</div>
+                        <div class="panel-body">
+                            <div style="width:100%;float: left;margin-top: -1.33%;">
+                                <div class="col-md-6" id="Metadata">
+                                    <p style="font-size: 20px;font-weight: bold; padding-top: 3%">Get Expenses Metadata For Company</p>
+                                    <p>This endpoint returns all untransferred expenses ids and count of company</p>
+                                    <p>This endpoint retrieves all unfetched expenses metada.</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>GET api.masraff.co/v1.1/integration/metadata</code>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-6" style="background-color: #2f3640; height: 60%; padding-top: 3%;color:whitesmoke">
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/metadata"</code>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary">{</span>
+    <span class="label label-primary"> "expenses": [</span>
+        <span class="label label-primary"> 2,</span>
+        <span class="label label-primary"> 3,</span>
+        <span class="label label-primary"> 4,</span>
+        <span class="label label-primary"> 5,</span>
+        <span class="label label-primary"> 6</span>
+    <span class="label label-primary"> ],</span>
+    <span class="label label-danger"> "count": 5</span>
+<span class="label label-primary"> }</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div style="width:100%;float: left;">
+                                <div class="col-md-6">
+                                    <hr>
+                                    <p style="font-size: 20px;font-weight: bold;" id="MetadataSubCompany">Get Expenses Metadata For SubCompany</p>
+                                    <p>This endpoint returns all untransferred expenses ids and count of subcompany</p>
+                                    <p>This endpoint retrieves all unfetched expenses metada.</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>GET api.masraff.co/v1.1/integration/metadata/subcompany/subcompanyId</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>SubcompanyID</td>
+                                                <td>The ID of subcompany in Masraff System</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-6" style="background-color: #2f3640; height: 66%;color:whitesmoke">
+                                    <hr>
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/metadata/subcompany/3"</code>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+                
+<span class="label label-primary"> {</span>
+    <span class="label label-primary"> "expenses": [</span>
+        <span class="label label-primary"> 12,</span>
+        <span class="label label-primary"> 23,</span>
+        <span class="label label-primary"> 44,</span>
+        <span class="label label-primary"> 65,</span>
+        <span class="label label-primary"> 86</span>
+    <span class="label label-primary"> ],</span>
+    <span class="label label-Danger"> "count": 5</span>
+<span class="label label-primary"> }</span>
+</code>
+ </pre>
+
+                                </div>
+                            </div>
+
+                            <div style="width:100%;float: left;">
+                                <div class="col-md-6">
+                                    <hr>
+                                    <p style="font-size: 20px;font-weight: bold;" id="SpecificExpense">Get a Specific Expense Details</p>
+                                    <p>This endpoint retrieves a specific expense that is not marked as transfered.</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>GET api.masraff.co/v1.1/integration/expense/Id</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Id</td>
+                                                <td>The ID of expense retrieved from metadata</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-6" style="background-color: #2f3640; height: 112%; color:whitesmoke">
+                                    <hr>
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/expense/id"</code>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+<pre>
+<code>                
+<span class="label label-primary"> {</span>
+    <span class="label label-primary"> "Id: 665,</span> <span class="label label-success">Id of expense in Masraff system</span>
+    <span class="label label-primary"> "UserId": 5,</span> <span class="label label-success">Id of User in Masraff system</span>
+    <span class="label label-primary"> "ReportId": 195,</span> <span class="label label-success">Id of report in Masraff system</span>
+    <span class="label label-primary"> "CompanyId": 1,</span> <span class="label label-success">Id of company in Masraff system, not subcompany</span>
+    <span class="label label-primary"> "CurrencyType": "TL",</span> <span class="label label-success">Id of report in Masraff system</span>
+    <span class="label label-primary"> "ExpenseDate": "20171026",</span>
+    <span class="label label-primary"> "CreateDate": "20171025",</span>
+    <span class="label label-primary"> "Amount": 200,</span>
+    <span class="label label-primary"> "TaxPercentage": 18,</span>
+    <span class="label label-primary"> "TaxPercentageCode": "V1",</span> <span class="label label-success">Integration code for Tax Percentage</span>
+    <span class="label label-primary"> "PersonnelCode": "P00023",</span>
+    <span class="label label-primary"> "SubcompanyId": 1,</span> <span class="label label-success">Id of subcompany in Masraff system. If none returns null</span>
+    <span class="label label-primary"> "SubcompanyCode": "AA-123",</span>
+    <span class="label label-primary"> "TaxAmount": 30.51,</span> 
+    <span class="label label-primary"> "ExpenseTypeId": 3,</span> <span class="label label-success">category id of expense</span>
+    <span class="label label-primary"> "IntegrationCode": "OTL123A",</span> <span class="label label-success">Integration code of expense type</span>
+    <span class="label label-primary"> "Note": "notes-on-expense",</span>
+    <span class="label label-primary"> "ImageURL": "url-for-image-file",</span>
+    <span class="label label-primary"> "Merchant": "XX RESTAURANT",</span>
+    <span class="label label-primary"> "AccountCode": "12.511.12",</span>
+    <span class="label label-primary"> "TaxAccountCode": "",</span>
+    <span class="label label-primary"> "UserOHPCode": "AAA",</span>
+    <span class="label label-primary"> "UserArpCode": "12.123.1234",</span>
+    <span class="label label-primary"> "TagName": "İş Yemeği",</span>
+    <span class="label label-primary"> "Reimbursable": true,</span>
+    <span class="label label-primary"> "Billable": false</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+
+                            <div style="width:100%;float: left;">
+                                <div class="col-md-6">
+                                    <hr>
+                                    <p style="font-size: 20px;font-weight: bold;" id="ExpenseTransfer">Mark a Specific Expense Transfered</p>
+                                    <p>This endpoint marks a specific expense transfered.</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>POST api.masraff.co/v1.1/integration/expense/id/transfer</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Id</td>
+                                                <td>The ID of expense that is going to be marked</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-6" style="background-color: #2f3640; height: 65%;color:whitesmoke">
+                                    <hr>
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/expense/id/transfer"</code>
+                                    </p>
+                                    <p> -X
+                                        <span style="font-weight: bold;">POST</span>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+                                     <code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"success": true</span>
+<span class="label label-primary">}</span>
+   </code>
+    </pre>
+
+                                </div>
+                            </div>
+                            <div style="width:100%;float: left;">
+                                    <div class="col-md-6" id="GetUsersExpenses">
+                                        <hr>
+                                        <p style="font-size: 20px;font-weight: bold;">Get Expenses Of User</p>
+                                        <p>This endpoint returns all expense details and count of user</p>
+                                        <br>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                        <p>
+                                            <code>GET api.masraff.co/v1.1/integration/user/expenses/registrationNumber</code>
+                                        </p>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Registration Number</td>
+                                                <td>
+                                                    User's RegistrationNumber in Masraff system
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    </div>
+    
+                                    <div class="col-md-6" style="background-color: #2f3640; height: 135%;color:whitesmoke">
+                                        <hr>
+                                        <p>curl
+                                            <code>"http://api.masraff.co/v1.1/integration/user/expenses/registrationNumber"</code>
+                                        </p>
+                                        <p> -H
+                                            <code>"Authorization: yourMasraffApiKey"</code>
+                                        </p>
+                                        <br>
+                                        <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+    <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary"> [</span>                
+        <span class="label label-primary"> expenses:{</span>
+            <span class="label label-primary"> "Id: 665,</span>
+            <span class="label label-primary"> "UserId": 5,</span>
+            <span class="label label-primary"> "ReportId": 195,</span>
+            <span class="label label-primary"> "CompanyId": 1,</span>
+            <span class="label label-primary"> "CurrencyType": "TL",</span>
+            <span class="label label-primary"> "ExpenseDate": "20171026",</span>
+            <span class="label label-primary"> "CreateDate": "20171025",</span>
+            <span class="label label-primary"> "Amount": 200,</span>
+            <span class="label label-primary"> "TaxPercentage": 18,</span>
+            <span class="label label-primary"> "TaxPercentageCode": "V1",</span>
+            <span class="label label-primary"> "PersonnelCode": "P00023",</span>
+            <span class="label label-primary"> "SubcompanyId": 1,</span>
+            <span class="label label-primary"> "SubcompanyCode": "AA-123",</span>
+            <span class="label label-primary"> "TaxAmount": 30.51,</span> 
+            <span class="label label-primary"> "ExpenseTypeId": 3,</span>
+            <span class="label label-primary"> "IntegrationCode": "OTL123A",</span>
+            <span class="label label-primary"> "Note": "notes-on-expense",</span>
+            <span class="label label-primary"> "ImageURL": "url-for-image-file",</span>
+            <span class="label label-primary"> "Merchant": "XX RESTAURANT",</span>
+            <span class="label label-primary"> "AccountCode": "12.511.12",</span>
+            <span class="label label-primary"> "TaxAccountCode": "",</span>
+            <span class="label label-primary"> "UserOHPCode": "AAA",</span>
+            <span class="label label-primary"> "UserArpCode": "12.123.1234",</span>
+            <span class="label label-primary"> "TagName": "İş Yemeği",</span>
+            <span class="label label-primary"> "Reimbursable": true,</span>
+            <span class="label label-primary"> "Billable": false</span>
+        <span class="label label-primary">},</span>
+        ...
+    <span class="label label-primary"> ]</span>
+    <span class="label label-danger"> "count": 5</span>
+<span class="label label-primary"> }</span>
+</code>
+</pre>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default" id="Reports">
+                            <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Expense Form</div>
+                            <div class="panel-body">
+                                <div style="width:100%;float: left;margin-top:-1.38%;">
+                                    <div class="col-md-6" style="padding-top: 3%">
+                                        <p style="font-size: 20px;font-weight: bold;" id="ExpenseTransfer">Mark a Specific Expense Form Complete</p>
+                                        <p>This endpoint marks a specific expense form complete.</p>
+                                        <br>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                        <p>
+                                            <code>POST api.masraff.co/v1.1/integration/report/id/complete</code>
+                                        </p>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Parameter</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Id</td>
+                                                    <td>The ID of expense form that is going to be completed</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+    
+                                    <div class="col-md-6" style="height: 53%;background-color: #2f3640;padding-top: 3%;color:whitesmoke">
+                                        <p>curl
+                                            <code>"http://api.masraff.co/v1.1/integration/report/id/complete"</code>
+                                        </p>
+                                        <p> -X
+                                            <span style="font-weight: bold;">POST</span>
+                                        </p>
+                                        <p> -H
+                                            <code>"Authorization: yourMasraffApiKey"</code>
+                                        </p>
+                                        <br>
+                                        <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+<pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"success": true</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+    
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="panel panel-default" id="Tags">
+                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Tags</div>
+                        <div class="panel-body">
+                            <div style="width: 100%;float: left;margin-top: -1.41%">
+                                <div class="col-md-6" id="MetadataTags" style="padding-top:3%">
+                                    <p style="font-size: 20px;font-weight: bold;">Get Tags Metadata For Company</p>
+                                    <p>This endpoint returns all tags and count of company</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>GET api.masraff.co/v1.1/integration/tag/taglist</code>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-6" style="height: 70%;background-color: #2f3640;padding-top:3%;color:whitesmoke">
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/tag/taglist"</code>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary">{</span>
+    <span class="label label-primary"> "tags": [</span>
+        <span class="label label-primary">{</span>
+            <span class="label label-primary"> Id:5</span>
+            <span class="label label-primary"> Name:"TagName"</span>
+            <span class="label label-primary"> Description:"TagDescription"</span>
+        <span class="label label-primary"> },</span>
+    ...
+    <span class="label label-primary"> ],</span>
+    <span class="label label-danger"> "count": 5</span>
+<span class="label label-primary"> }</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div style="width: 100%;;float: left;">
+                                <div class="col-md-6">
+                                    <hr>
+                                    <p style="font-size: 20px;font-weight: bold;" id="CreateTags">Create Tags Of Company</p>
+                                    <p>This endpoint create tags of company.</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>POST api.masraff.co/v1.1/integration/tag/create</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Description</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code></code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <p>
+                                        <p style="font-size: 20px;font-weight: bold;">Example Post</p>
+                                    </p>
+                                    <pre>
+<code>
+<span class="label label-primary">[</span>
+    <span class="label label-primary"> {</span>
+        <span class="label label-primary"> Name:"TagName"</span>
+        <span class="label label-primary"> Description:"TagDescription"</span>
+    <span class="label label-primary"> },</span>
+...
+<span class="label label-primary"> ]</span>
+</code>
+</pre>
+                                </div>
+                                <div class="col-md-6"  style="height: 105%;background-color: #2f3640;;color:whitesmoke">
+                                    <hr>
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/tag/create"</code>
+                                    </p>
+                                    <p> -X
+                                        <span style="font-weight: bold;">POST</span>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"response": response message</span>
+    <span class="label label-success">return <code>"The information has been successfully inserted."</code> if operation is success</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                            <div style="width: 100%;float: left;">
+                                <div class="col-md-6">
+                                    <hr>
+                                    <p style="font-size: 20px;font-weight: bold;" id="UpdateTags">Update Tags Of Company</p>
+                                    <p>This endpoint update tags of company.</p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>POST api.masraff.co/v1.1/integration/tag/update</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                                <th>Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Id</td>
+                                                <td>The ID of Tag in Masraff system</td>
+                                                <td>
+                                                    <span class="label label-primary">int</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Tag Name
+                                                </td>
+                                                <td>
+                                                    <span class="label label-primary">string</span><code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Description</td>
+                                                <td>Tag Decription</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span><code></code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">Example Post</p>
+                                    <pre>
+<code>
+<span class="label label-primary"> [</span>
+    <span class="label label-primary"> {</span>
+        <span class="label label-primary"> Id:5</span>
+        <span class="label label-primary"> Name:"TagName"</span>
+        <span class="label label-primary"> Description:"TagDescription"</span>
+    <span class="label label-primary"> },</span>
+    ...
+<span class="label label-primary"> ]</span>
+</code>
+</pre>
+                                </div>
+
+                                <div class="col-md-6"  style="height: 110.7%;background-color: #2f3640;;color:whitesmoke">
+                                    <hr>
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/tag/update"</code>
+                                    </p>
+                                    <p> -X
+                                        <span style="font-weight: bold;">POST</span>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"response": response message</span>
+    <span class="label label-success">return <code>"The information has been successfully upadated."</code> if operation is success</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel panel-default" id="SubCompany">
+                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">SubCompanies</div>
+                        <div class="panel-body">
+                            <div style="width: 100%;float: left; margin-top: -1.36%">
+                                <div class="col-md-6" id="MetadataSubCompanies" style="padding-top:3%">
+                                    <p style="font-size: 20px;font-weight: bold;">Get SubCompanies Metadata For Company</p>
+                                    <p>This endpoint returns all subcompanies and count of company</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>GET api.masraff.co/v1.1/integration/subCompany/list</code>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-6" style="height: 65%;background-color: #2f3640;padding-top:3%;color:whitesmoke">
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/subCompany/list"</code>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary">{</span>
+    <span class="label label-primary"> "subCompanies": [</span>
+        <span class="label label-primary">{</span>
+            <span class="label label-primary"> Id:5</span>
+            <span class="label label-primary"> Name:"SubCompanyName"</span>
+            <span class="label label-primary"> Code:"SubCompany Code"</span>
+        <span class="label label-primary"> },</span>
+    ...
+    <span class="label label-primary"> ],</span>
+    <span class="label label-danger"> "count": 5</span>
+<span class="label label-primary"> }</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div style="width: 100%;float: left;">
+                                <div class="col-md-6">
+                                    <hr>
+                                    <p style="font-size: 20px;font-weight: bold;" id="CreateSubCompanies">Create SubCompany Of Company</p>
+                                    <p>This endpoint create subcompanies of company.</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>POST api.masraff.co/v1.1/integration/subCompany/create</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Description</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code></code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">Example Post</p>
+                                    <pre>
+<code>
+<span class="label label-primary">[</span>
+    <span class="label label-primary"> {</span>
+        <span class="label label-primary"> Name:"SubCompanyName"</span>
+        <span class="label label-primary"> Code:"SubCompanyCode"</span>
+    <span class="label label-primary"> },</span>
+...
+<span class="label label-primary"> ]</span>
+</code>
+</pre>
+                                </div>
+                                <div class="col-md-6" style="height: 103.5%;background-color: #2f3640;color:whitesmoke">
+                                    <hr>
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/subCompany/create"</code>
+                                    </p>
+                                    <p> -X
+                                        <span style="font-weight: bold;">POST</span>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"response": response message</span>
+    <span class="label label-success">return <code>"The information has been successfully inserted."</code> if operation is success</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                            <div style="width: 100%;float: left">
+                                <div class="col-md-6">
+                                    <hr>
+                                    <p style="font-size: 20px;font-weight: bold;" id="UpdateSubCompanies">Update SubCompanies Of Company</p>
+                                    <p>This endpoint update subcompanies of company.</p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>POST api.masraff.co/v1.1/integration/subCompany/update</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                                <th>Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Id</td>
+                                                <td>The ID of SubCompany in Masraff system</td>
+                                                <td>
+                                                    <span class="label label-primary">int</span><code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>SubCompany Name
+                                                </td>
+                                                <td>
+                                                    <span class="label label-primary">string</span><code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Code</td>
+                                                <td>SubCompany Code</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span><code></code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">Example Post</p>
+                                    <pre>
+<code>
+<span class="label label-primary"> [</span>
+    <span class="label label-primary"> {</span>
+        <span class="label label-primary"> Id:5</span>
+        <span class="label label-primary"> Name:"SubCompanyName"</span>
+        <span class="label label-primary"> Code:"SubCompanyCode"</span>
+    <span class="label label-primary"> },</span>
+...
+<span class="label label-primary"> ]</span>
+</code>
+</pre>
+                                </div>
+
+                                <div class="col-md-6"  style="height: 110.9%;background-color: #2f3640;color:whitesmoke">
+                                    <hr>
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/subCompany/update"</code>
+                                    </p>
+                                    <p> -X
+                                        <span style="font-weight: bold;">POST</span>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"response": response message</span>
+    <span class="label label-success">return <code>"The information has been successfully upadated."</code> if operation is success</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel panel-default" id="ExpenseTypes">
+                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">ExpenseTypes</div>
+                        <div class="panel-body">
+                            <div style="width: 100%;float: left;margin-top:-1.33%">
+                                <div class="col-md-6" id="MetadataExpenseTypes" style="padding-top:3%">
+                                    <p style="font-size: 20px;font-weight: bold;">Get ExpenseTypes Metadata For Company</p>
+                                    <p>This endpoint returns all expensetypes and count of company</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>GET api.masraff.co/v1.1/integration/expenseType/list</code>
+                                    </p>
+                                </div>
+
+                                <div class="col-md-6"  style="height: 80%;background-color: #2f3640;padding-top: 3%;color:whitesmoke">
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/expenseTypes/list"</code>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary">{</span>
+    <span class="label label-primary"> "expenseTypes": [</span>
+        <span class="label label-primary">{</span>
+            <span class="label label-primary"> Id:5,</span>
+            <span class="label label-primary"> Name:"Yemek",</span>
+            <span class="label label-primary"> Description:"İş Yemeği",</span>
+            <span class="label label-primary"> Code:"145.123.41.21",</span>
+            <span class="label label-primary"> IsDistanceExpenseType:"false",</span>
+            <span class="label label-primary"> MainExpenseTypeId:"Yemek",</span>
+            <span class="label label-primary"> VatRates:[
+                "0",
+                "8",
+                "18"
+            ],</span>
+            <span class="label label-primary"> ExpenseTypeLimit:100,</span>
+            <span class="label label-primary"> SubCompanies:[
+                "Ankara",
+                "İstanbul22",
+                "İzmirxx"
+            ]</span>
+        <span class="label label-primary"> },</span>
+    ...
+    <span class="label label-primary"> ],</span>
+    <span class="label label-danger"> "count": 5</span>
+<span class="label label-primary"> }</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div style="width: 100%;float: left;">
+                                <div class="col-md-6">
+                                    <hr>
+                                    <p style="font-size: 20px;font-weight: bold;" id="CreateExpenseTypes">Create ExpenseType Of Company</p>
+                                    <p>This endpoint create expensetype of company.</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>POST api.masraff.co/v1.1/integration/expenseType/create</code>
+                                    </p>
+                                    <br>
+                                    <p>
+                                        <p style="font-size: 13px;font-weight: bold;">MainExpenseTypeList in Masraff system</p>
+                                        <code style="color:gray">http://api.masraff.co/v1.1/integration/mainExpenseType/list</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Code</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Description</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code></code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    IsDistanceExpenseType
+                                                </td>
+                                                <td>
+                                                    <span class="label label-primary">boolean</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>MainExpenseTypeId</td>
+                                                <td>
+                                                    <span class="label label-primary">int</span>
+                                                    <code>MainExpenseTypeId in Masraff system</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>VatRates</td>
+                                                <td>
+                                                    <span class="label label-primary">byte array</span>
+                                                    <code>(ex: [1,8,18])</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>ExpenseTypeLimit</td>
+                                                <td>
+                                                    <span class="label label-primary">decimal</span>
+                                                    <code></code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">Example Post</p>
+                                    <pre>
+<code>
+<span class="label label-primary">[</span>
+    <span class="label label-primary"> {</span>
+        <span class="label label-primary"> Name:"Mesafe"</span>
+        <span class="label label-primary"> Code:"141.214.15"</span>
+        <span class="label label-primary"> Description:"KISISELARAC"</span>
+        <span class="label label-primary"> IsDistanceExpenseType:"true"</span>
+        <span class="label label-primary"> MainExpenseTypeId:1</span>
+        <span class="label label-primary"> VatRates:[
+                0,
+                8,
+                18
+            ],</span>
+        <span class="label label-primary"> ExpenseTypeLimit:10</span>
+    <span class="label label-primary"> },</span>
+...
+<span class="label label-primary"> ]</span>
+</code>
+</pre>
+                                </div>
+                                <div class="col-md-6"  style="height: 164.1%;background-color: #2f3640;color:whitesmoke">
+                                    <hr>
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/expenseType/create"</code>
+                                    </p>
+                                    <p> -X
+                                        <span style="font-weight: bold;">POST</span>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"response": response message</span>
+    <span class="label label-success">return <code>"The information has been successfully inserted."</code> if operation is success</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                            <div style="width: 100%;float: left;">
+                                <div class="col-md-6" id="UpdateExpenseTypes">
+                                    <hr>
+                                    <p style="font-size: 20px;font-weight: bold;" id="CreateExpenseTypes">Update ExpenseType Of Company</p>
+                                    <p>This endpoint update expensetype of company.</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>POST api.masraff.co/v1.1/integration/expenseType/update</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Id</td>
+                                                <td>
+                                                    <span class="label label-primary"> int</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Code</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Description</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code></code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>VatRates</td>
+                                                <td>
+                                                    <span class="label label-primary">byte array</span>
+                                                    <code>(ex: [1,8,18])</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>ExpenseTypeLimit</td>
+                                                <td>
+                                                    <span class="label label-primary">decimal</span>
+                                                    <code></code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">Example Post</p>
+                                    <pre>
+<code>
+<span class="label label-primary">[</span>
+    <span class="label label-primary"> {</span>
+        <span class="label label-primary"> Id:1</span>
+        <span class="label label-primary"> Name:"Mesafe"</span>
+        <span class="label label-primary"> Code:"141.214.15"</span>
+        <span class="label label-primary"> Description:"KISISELARAC"</span>
+        <span class="label label-primary"> VatRates:[
+                0,
+                8,
+                18
+            ],</span>
+        <span class="label label-primary"> ExpenseTypeLimit:10</span>
+    <span class="label label-primary"> },</span>
+...
+<span class="label label-primary"> ]</span>
+</code>
+</pre>
+                                </div>
+                                <div class="col-md-6"  style="height: 137%;background-color: #2f3640;color:whitesmoke">
+                                    <hr>
+                                    <p>curl
+                                        <code>"http://api.masraff.co/v1.1/integration/expenseType/update"</code>
+                                    </p>
+                                    <p> -X
+                                        <span style="font-weight: bold;">POST</span>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"response": response message</span>
+    <span class="label label-success">return <code>"The information has been successfully updated."</code> if operation is success</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel panel-default" id="Users">
+                            <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Users</div>
+                            <div class="panel-body">
+                                <div style="width: 100%;float: left;margin-top:-1.383%">
+                                    <div class="col-md-6" id="GetUsers" style="padding-top:3%">
+                                        <p style="font-size: 20px;font-weight: bold;">Get Users For Company</p>
+                                        <p>This endpoint returns all users and count of company</p>
+                                        <br>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                        <p>
+                                            <code>GET api.masraff.co/v1.1/integration/user/list</code>
+                                        </p>
+                                    </div>
+    
+                                    <div class="col-md-6"  style="height: 85%;background-color: #2f3640;padding-top:3%;color:whitesmoke">
+                                        <p>curl
+                                            <code>"http://api.masraff.co/v1.1/integration/user/list"</code>
+                                        </p>
+                                        <p> -H
+                                            <code>"Authorization: yourMasraffApiKey"</code>
+                                        </p>
+                                        <br>
+                                        <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                        <pre>
+    <code>
+    <span class="label label-primary">{</span>
+        <span class="label label-primary"> "users": [</span>
+            <span class="label label-primary">{</span>
+                <span class="label label-primary"> Id:5,</span>
+                <span class="label label-primary"> NameSurname:"Akın Işık",</span>
+                <span class="label label-primary"> Email:"demo@masraff.co",</span>
+                <span class="label label-primary"> ExpenseCenter:"M0123",</span>
+                <span class="label label-primary"> PersonnelCode:"P0095",</span>
+                <span class="label label-primary"> ApprovalLimit:"100",</span>
+                <span class="label label-primary"> ApprovalUserLimit:"2"</span>
+                <span class="label label-primary"> ArpCode:"195.076.001.1609"</span>
+            <span class="label label-primary"> },</span>
+        ...
+        <span class="label label-primary"> ],</span>
+        <span class="label label-danger"> "count": 5</span>
+    <span class="label label-primary"> }</span>
+    </code>
+    </pre>
+    
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <div style="width: 100%;float: left;">
+                                    <div class="col-md-6">
+                                        <hr>
+                                        <p style="font-size: 20px;font-weight: bold;" id="CreateUsers">Create User Of Company</p>
+                                        <p>This endpoint create user of company.</p>
+                                        <br>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                        <p>
+                                            <code>POST api.masraff.co/v1.1/integration/user/create</code>
+                                        </p>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Parameter</th>
+                                                    <th>Value</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td>
+                                                        <span class="label label-primary">string</span>
+                                                        <code>(notnullable)</code>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>FirstName</td>
+                                                    <td>
+                                                        <span class="label label-primary">string</span>
+                                                        <code>(notnullable)</code>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>LastName</td>
+                                                    <td>
+                                                        <span class="label label-primary">string</span>
+                                                        <code>(notnullable)</code>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        RegistrationNumber
+                                                    </td>
+                                                    <td>
+                                                        <span class="label label-primary">string</span>
+                                                        <code></code>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ApprovalLimit</td>
+                                                    <td>
+                                                        <span class="label label-primary">decimal</span>
+                                                        <code></code>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ApproverUserId</td>
+                                                    <td>
+                                                        <span class="label label-primary">int</span>
+                                                        <code>(notnullable)</code>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ApproverUserLimit</td>
+                                                    <td>
+                                                        <span class="label label-primary">decimal</span>
+                                                        <code></code>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ArpCode</td>
+                                                    <td>
+                                                        <span class="label label-primary">string</span>
+                                                        <code></code>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>OHPCode</td>
+                                                    <td>
+                                                        <span class="label label-primary">string</span>
+                                                        <code></code>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">Example Post</p>
+                                        <pre>
+    <code>
+    <span class="label label-primary">[</span>
+        <span class="label label-primary"> {</span>
+            <span class="label label-primary"> FirstName:"Akın"</span>
+            <span class="label label-primary"> LastName:"Işık"</span>
+            <span class="label label-primary"> Email:"demo@masraff.co"</span>
+            <span class="label label-primary"> ApproverUserId:1</span>
+            <span class="label label-primary"> ApproverUserLimit:2</span>
+            <span class="label label-primary"> ApprovalLimit:120</span>
+            <span class="label label-primary"> ArpCode:"100.99.98"</span>
+            <span class="label label-primary"> OHPCode:"M0123"</span>
+        <span class="label label-primary"> },</span>
+    ...
+    <span class="label label-primary"> ]</span>
+    </code>
+    </pre>
+                                    </div>
+                                    <div class="col-md-6"  style="height: 165.5%;background-color: #2f3640;color:whitesmoke">
+                                        <hr>
+                                        <p>curl
+                                            <code>"http://api.masraff.co/v1.1/integration/user/create"</code>
+                                        </p>
+                                        <p> -X
+                                            <span style="font-weight: bold;">POST</span>
+                                        </p>
+                                        <p> -H
+                                            <code>"Authorization: yourMasraffApiKey"</code>
+                                        </p>
+                                        <br>
+                                        <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                        <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"response": response message</span>
+    <span class="label label-success">return <code>"The information has been successfully inserted."</code> if operation is success</span>
+<span class="label label-primary">}</span>
+</code>
+    </pre>
+    
+                                    </div>
+                                </div>
+                                <div style="width: 100%;float: left;">
+                                    <div class="col-md-6" id="UserSubCompany">
+                                        <hr>
+                                        <p style="font-size: 20px;font-weight: bold;">Add User in SubCompany</p>
+                                        <p>This endpoint add user in subcompany of company.</p>
+                                        <br>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                        <p>
+                                            <code>POST api.masraff.co/v1.1/integration/userSubCompany/add</code>
+                                        </p>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Parameter</th>
+                                                    <th>Description</th>
+                                                    <th>Value</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>UserList</td>
+                                                    <td>UserId's in Masraff system <code>(ex:[1,2,3])</code></td>
+                                                    <td>
+                                                        <span class="label label-primary"> int array</span><code>(notnullable)</code>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SubCompanyId</td>
+                                                    <td>SubCompanyId in Masraff system</td>
+                                                    <td>
+                                                        <span class="label label-primary">int</span><code>(notnullable)</code>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">Example Post</p>
+                                        <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary"> UserList:[1,5,10]</span>
+    <span class="label label-primary"> SubCompanyId:5</span>
+<span class="label label-primary"> }</span>
+</code>
+</pre>
+                                    </div>
+                                    <div class="col-md-6"  style="height: 100%;background-color: #2f3640;color:whitesmoke">
+                                        <hr>
+                                        <p>curl
+                                            <code>"http://api.masraff.co/v1.1/integration/userSubCompany/add"</code>
+                                        </p>
+                                        <p> -X
+                                            <span style="font-weight: bold;">POST</span>
+                                        </p>
+                                        <p> -H
+                                            <code>"Authorization: yourMasraffApiKey"</code>
+                                        </p>
+                                        <br>
+                                        <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                        <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"success": true</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+    
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#nav li').first().addClass("active").find('ul').show();
+            $('#nav > li > a').click(function () {
+                if ($(this).attr('class') != 'active') {
+                    $('#nav li ul').slideUp();
+                    $(this).next().slideToggle();
+                    $('#nav li a').removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            var Accordion = function (el, multiple) {
+                this.el = el || {};
+                // more then one submenu open?
+                this.multiple = multiple || false;
+
+                var dropdownlink = this.el.find('.dropdownlink');
+                dropdownlink.on('click',
+                    { el: this.el, multiple: this.multiple },
+                    this.dropdown);
+            };
+
+            Accordion.prototype.dropdown = function (e) {
+                var $el = e.data.el,
+                    $this = $(this),
+                    //this is the ul.submenuItems
+                    $next = $this.next();
+
+                $next.slideToggle();
+                $this.parent().toggleClass('open');
+
+                if (!e.data.multiple) {
+                    //show only one menu at the same time
+                    $el.find('.submenuItems').not($next).slideUp().parent().removeClass('open');
+                }
+            }
+
+            var accordion = new Accordion($('.accordion-menu'), false);
+        });
+
+       function clickSample(divName){
+        $('html, body').animate({ scrollTop: $(divName).offset().top - 80 }, 500);
+}
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- 
+ -->
