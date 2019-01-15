@@ -342,7 +342,7 @@
 <pre>
 <code>                
 <span class="label label-primary"> {</span>
-    <span class="label label-primary"> "Id: 665,</span> <span class="label label-success">Id of expense in Masraff system</span>
+    <span class="label label-primary"> "Id": 665,</span> <span class="label label-success">Id of expense in Masraff system</span>
     <span class="label label-primary"> "UserId": 5,</span> <span class="label label-success">Id of User in Masraff system</span>
     <span class="label label-primary"> "ReportId": 195,</span> <span class="label label-success">Id of report in Masraff system</span>
     <span class="label label-primary"> "CompanyId": 1,</span> <span class="label label-success">Id of company in Masraff system, not subcompany</span>
@@ -368,6 +368,7 @@
     <span class="label label-primary"> "TagName": "İş Yemeği",</span>
     <span class="label label-primary"> "Reimbursable": true,</span>
     <span class="label label-primary"> "Billable": false</span>
+    <span class="label label-primary"> "CustomCode": "111"</span>
 <span class="label label-primary">}</span>
 </code>
 </pre>
@@ -420,7 +421,7 @@
                                     <pre>
                                      <code>
 <span class="label label-primary"> {</span>
-    <span class="label label-primary">"success": true</span>
+    <span class="label label-primary">"response": true</span>
 <span class="label label-primary">}</span>
    </code>
     </pre>
@@ -436,7 +437,7 @@
                                         <br>
                                         <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
                                         <p>
-                                            <code>GET api.masraff.co/v1.1/integration/user/expenses/registrationNumber</code>
+                                            <code>GET api.masraff.co/v1.1/integration/user/expenses/personnelCode</code>
                                         </p>
                                         <br>
                                         <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
@@ -461,7 +462,7 @@
                                     <div class="col-md-6" style="background-color: #2f3640; height: 135%;color:whitesmoke">
                                         <hr>
                                         <p>curl
-                                            <code>"http://api.masraff.co/v1.1/integration/user/expenses/registrationNumber"</code>
+                                            <code>"http://api.masraff.co/v1.1/integration/user/expenses/personnelCode"</code>
                                         </p>
                                         <p> -H
                                             <code>"Authorization: yourMasraffApiKey"</code>
@@ -556,7 +557,7 @@
 <pre>
 <code>
 <span class="label label-primary"> {</span>
-    <span class="label label-primary">"success": true</span>
+    <span class="label label-primary">"response": true</span>
 <span class="label label-primary">}</span>
 </code>
 </pre>
@@ -594,9 +595,9 @@
 <span class="label label-primary">{</span>
     <span class="label label-primary"> "tags": [</span>
         <span class="label label-primary">{</span>
-            <span class="label label-primary"> Id:5</span>
-            <span class="label label-primary"> Name:"TagName"</span>
-            <span class="label label-primary"> Description:"TagDescription"</span>
+            <span class="label label-primary"> "Id":"5",</span>
+            <span class="label label-primary"> "Name":"TagName",</span>
+            <span class="label label-primary"> "Description":"TagDescription"</span>
         <span class="label label-primary"> },</span>
     ...
     <span class="label label-primary"> ],</span>
@@ -654,8 +655,8 @@
 <code>
 <span class="label label-primary">[</span>
     <span class="label label-primary"> {</span>
-        <span class="label label-primary"> Name:"TagName"</span>
-        <span class="label label-primary"> Description:"TagDescription"</span>
+        <span class="label label-primary"> "Name":"TagName",</span>
+        <span class="label label-primary"> "Description":"TagDescription"</span>
     <span class="label label-primary"> },</span>
 ...
 <span class="label label-primary"> ]</span>
@@ -711,8 +712,7 @@
                                                 <td>Id</td>
                                                 <td>The ID of Tag in Masraff system</td>
                                                 <td>
-                                                    <span class="label label-primary">int</span>
-                                                    <code>(notnullable)</code>
+                                                    <span class="label label-primary">int</span><code>(notnullable)</code>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -720,14 +720,14 @@
                                                 <td>Tag Name
                                                 </td>
                                                 <td>
-                                                    <span class="label label-primary">string</span><code>(notnullable)</code>
+                                                    <span class="label label-primary">string</span>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Description</td>
                                                 <td>Tag Decription</td>
                                                 <td>
-                                                    <span class="label label-primary">string</span><code></code>
+                                                    <span class="label label-primary">string</span>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -738,9 +738,9 @@
 <code>
 <span class="label label-primary"> [</span>
     <span class="label label-primary"> {</span>
-        <span class="label label-primary"> Id:5</span>
-        <span class="label label-primary"> Name:"TagName"</span>
-        <span class="label label-primary"> Description:"TagDescription"</span>
+        <span class="label label-primary"> "Id":5,</span>
+        <span class="label label-primary"> "Name":"TagName",</span>
+        <span class="label label-primary"> "Description":"TagDescription"</span>
     <span class="label label-primary"> },</span>
     ...
 <span class="label label-primary"> ]</span>
@@ -805,9 +805,9 @@
 <span class="label label-primary">{</span>
     <span class="label label-primary"> "subCompanies": [</span>
         <span class="label label-primary">{</span>
-            <span class="label label-primary"> Id:5</span>
-            <span class="label label-primary"> Name:"SubCompanyName"</span>
-            <span class="label label-primary"> Code:"SubCompany Code"</span>
+            <span class="label label-primary"> "Id":5,</span>
+            <span class="label label-primary"> "Name":"SubCompanyName",</span>
+            <span class="label label-primary"> "Code":"SubCompany Code"</span>
         <span class="label label-primary"> },</span>
     ...
     <span class="label label-primary"> ],</span>
@@ -844,15 +844,14 @@
                                             <tr>
                                                 <td>Name</td>
                                                 <td>
-                                                    <span class="label label-primary">string</span>
-                                                    <code>(notnullable)</code>
+                                                    <span class="label label-primary">string</span><code>(notnullable)</code>
+                                                    
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Description</td>
                                                 <td>
                                                     <span class="label label-primary">string</span>
-                                                    <code></code>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -863,8 +862,8 @@
 <code>
 <span class="label label-primary">[</span>
     <span class="label label-primary"> {</span>
-        <span class="label label-primary"> Name:"SubCompanyName"</span>
-        <span class="label label-primary"> Code:"SubCompanyCode"</span>
+        <span class="label label-primary"> "Name":"SubCompanyName",</span>
+        <span class="label label-primary"> "Code":"SubCompanyCode"</span>
     <span class="label label-primary"> },</span>
 ...
 <span class="label label-primary"> ]</span>
@@ -935,7 +934,7 @@
                                                 <td>Code</td>
                                                 <td>SubCompany Code</td>
                                                 <td>
-                                                    <span class="label label-primary">string</span><code></code>
+                                                    <span class="label label-primary">string</span>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -946,9 +945,9 @@
 <code>
 <span class="label label-primary"> [</span>
     <span class="label label-primary"> {</span>
-        <span class="label label-primary"> Id:5</span>
-        <span class="label label-primary"> Name:"SubCompanyName"</span>
-        <span class="label label-primary"> Code:"SubCompanyCode"</span>
+        <span class="label label-primary"> "Id":5,</span>
+        <span class="label label-primary"> "Name":"SubCompanyName",</span>
+        <span class="label label-primary"> "Code":"SubCompanyCode"</span>
     <span class="label label-primary"> },</span>
 ...
 <span class="label label-primary"> ]</span>
@@ -1013,19 +1012,14 @@
 <span class="label label-primary">{</span>
     <span class="label label-primary"> "expenseTypes": [</span>
         <span class="label label-primary">{</span>
-            <span class="label label-primary"> Id:5,</span>
-            <span class="label label-primary"> Name:"Yemek",</span>
-            <span class="label label-primary"> Description:"İş Yemeği",</span>
-            <span class="label label-primary"> Code:"145.123.41.21",</span>
-            <span class="label label-primary"> IsDistanceExpenseType:"false",</span>
-            <span class="label label-primary"> MainExpenseTypeId:"Yemek",</span>
-            <span class="label label-primary"> VatRates:[
-                "0",
-                "8",
-                "18"
-            ],</span>
-            <span class="label label-primary"> ExpenseTypeLimit:100,</span>
-            <span class="label label-primary"> SubCompanies:[
+            <span class="label label-primary"> "Id":"5",</span>
+            <span class="label label-primary"> "Name":"Yemek",</span>
+            <span class="label label-primary"> "Description":"İş Yemeği",</span>
+            <span class="label label-primary"> "Code":"145.123.41.21",</span>
+            <span class="label label-primary"> "IsDistanceExpenseType":"false",</span>
+            <span class="label label-primary"> "MainExpenseType":"Yemek",</span>
+            <span class="label label-primary"> "ExpenseTypeLimit":100,</span>
+            <span class="label label-primary"> "SubCompanies":[
                 "Ankara",
                 "İstanbul22",
                 "İzmirxx"
@@ -1071,22 +1065,19 @@
                                             <tr>
                                                 <td>Name</td>
                                                 <td>
-                                                    <span class="label label-primary">string</span>
-                                                    <code>(notnullable)</code>
+                                                    <span class="label label-primary">string</span><code>(notnullable)</code>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Code</td>
                                                 <td>
                                                     <span class="label label-primary">string</span>
-                                                    <code>(notnullable)</code>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Description</td>
                                                 <td>
                                                     <span class="label label-primary">string</span>
-                                                    <code></code>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1094,29 +1085,19 @@
                                                     IsDistanceExpenseType
                                                 </td>
                                                 <td>
-                                                    <span class="label label-primary">boolean</span>
-                                                    <code>(notnullable)</code>
+                                                    <span class="label label-primary">boolean</span><code>(notnullable)</code>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>MainExpenseTypeId</td>
+                                                <td>MainExpenseType</td>
                                                 <td>
-                                                    <span class="label label-primary">int</span>
-                                                    <code>MainExpenseTypeId in Masraff system</code>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>VatRates</td>
-                                                <td>
-                                                    <span class="label label-primary">byte array</span>
-                                                    <code>(ex: [1,8,18])</code>
+                                                    <span class="label label-primary">int</span><code>MainExpenseTypeId in Masraff system (notnullable)</code>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>ExpenseTypeLimit</td>
                                                 <td>
                                                     <span class="label label-primary">decimal</span>
-                                                    <code></code>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -1127,17 +1108,12 @@
 <code>
 <span class="label label-primary">[</span>
     <span class="label label-primary"> {</span>
-        <span class="label label-primary"> Name:"Mesafe"</span>
-        <span class="label label-primary"> Code:"141.214.15"</span>
-        <span class="label label-primary"> Description:"KISISELARAC"</span>
-        <span class="label label-primary"> IsDistanceExpenseType:"true"</span>
-        <span class="label label-primary"> MainExpenseTypeId:1</span>
-        <span class="label label-primary"> VatRates:[
-                0,
-                8,
-                18
-            ],</span>
-        <span class="label label-primary"> ExpenseTypeLimit:10</span>
+        <span class="label label-primary"> "Name":"Mesafe"</span>
+        <span class="label label-primary"> "Code":"141.214.15"</span>
+        <span class="label label-primary"> "Description":"KISISELARAC"</span>
+        <span class="label label-primary"> "IsDistanceExpenseType":"true"</span>
+        <span class="label label-primary"> "MainExpenseType":"Yemek",</span>
+        <span class="label label-primary"> "ExpenseTypeLimit":10</span>
     <span class="label label-primary"> },</span>
 ...
 <span class="label label-primary"> ]</span>
@@ -1192,43 +1168,31 @@
                                             <tr>
                                                 <td>Id</td>
                                                 <td>
-                                                    <span class="label label-primary"> int</span>
-                                                    <code>(notnullable)</code>
+                                                    <span class="label label-primary"> int</span><code>(notnullable)</code>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Name</td>
                                                 <td>
                                                     <span class="label label-primary">string</span>
-                                                    <code>(notnullable)</code>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Code</td>
                                                 <td>
                                                     <span class="label label-primary">string</span>
-                                                    <code>(notnullable)</code>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Description</td>
                                                 <td>
                                                     <span class="label label-primary">string</span>
-                                                    <code></code>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>VatRates</td>
-                                                <td>
-                                                    <span class="label label-primary">byte array</span>
-                                                    <code>(ex: [1,8,18])</code>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>ExpenseTypeLimit</td>
                                                 <td>
                                                     <span class="label label-primary">decimal</span>
-                                                    <code></code>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -1239,16 +1203,11 @@
 <code>
 <span class="label label-primary">[</span>
     <span class="label label-primary"> {</span>
-        <span class="label label-primary"> Id:1</span>
-        <span class="label label-primary"> Name:"Mesafe"</span>
-        <span class="label label-primary"> Code:"141.214.15"</span>
-        <span class="label label-primary"> Description:"KISISELARAC"</span>
-        <span class="label label-primary"> VatRates:[
-                0,
-                8,
-                18
-            ],</span>
-        <span class="label label-primary"> ExpenseTypeLimit:10</span>
+        <span class="label label-primary"> "Id":1,</span>
+        <span class="label label-primary"> "Name":"Mesafe",</span>
+        <span class="label label-primary"> "Code":"141.214.15",</span>
+        <span class="label label-primary"> "Description":"KISISELARAC",</span>
+        <span class="label label-primary"> "ExpenseTypeLimit":10</span>
     <span class="label label-primary"> },</span>
 ...
 <span class="label label-primary"> ]</span>
@@ -1312,14 +1271,14 @@
     <span class="label label-primary">{</span>
         <span class="label label-primary"> "users": [</span>
             <span class="label label-primary">{</span>
-                <span class="label label-primary"> Id:5,</span>
-                <span class="label label-primary"> NameSurname:"Akın Işık",</span>
-                <span class="label label-primary"> Email:"demo@masraff.co",</span>
-                <span class="label label-primary"> ExpenseCenter:"M0123",</span>
-                <span class="label label-primary"> PersonnelCode:"P0095",</span>
-                <span class="label label-primary"> ApprovalLimit:"100",</span>
-                <span class="label label-primary"> ApprovalUserLimit:"2"</span>
-                <span class="label label-primary"> ArpCode:"195.076.001.1609"</span>
+                <span class="label label-primary"> "Id":5,</span>
+                <span class="label label-primary"> "NameSurname":"Akın Işık",</span>
+                <span class="label label-primary"> "Email":"demo@masraff.co",</span>
+                <span class="label label-primary"> "ExpenseCenter":"M0123",</span>
+                <span class="label label-primary"> "PersonnelCode":"P0095",</span>
+                <span class="label label-primary"> "ApprovalLimit":"100",</span>
+                <span class="label label-primary"> "ApprovalUserLimit":"2",</span>
+                <span class="label label-primary"> "ArpCode":"195.076.001.1609"</span>
             <span class="label label-primary"> },</span>
         ...
         <span class="label label-primary"> ],</span>
@@ -1376,46 +1335,40 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        RegistrationNumber
+                                                        PersonnelNumber
                                                     </td>
                                                     <td>
                                                         <span class="label label-primary">string</span>
-                                                        <code></code>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>ApprovalLimit</td>
                                                     <td>
                                                         <span class="label label-primary">decimal</span>
-                                                        <code></code>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>ApproverUserId</td>
+                                                    <td>ApproverUserEmail</td>
                                                     <td>
-                                                        <span class="label label-primary">int</span>
-                                                        <code>(notnullable)</code>
+                                                        <span class="label label-primary">string</span><code>(notnullable)</code>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>ApproverUserLimit</td>
                                                     <td>
                                                         <span class="label label-primary">decimal</span>
-                                                        <code></code>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>ArpCode</td>
                                                     <td>
                                                         <span class="label label-primary">string</span>
-                                                        <code></code>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>OHPCode</td>
+                                                    <td>ExpenseCenter</td>
                                                     <td>
                                                         <span class="label label-primary">string</span>
-                                                        <code></code>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -1426,14 +1379,15 @@
     <code>
     <span class="label label-primary">[</span>
         <span class="label label-primary"> {</span>
-            <span class="label label-primary"> FirstName:"Akın"</span>
-            <span class="label label-primary"> LastName:"Işık"</span>
-            <span class="label label-primary"> Email:"demo@masraff.co"</span>
-            <span class="label label-primary"> ApproverUserId:1</span>
-            <span class="label label-primary"> ApproverUserLimit:2</span>
-            <span class="label label-primary"> ApprovalLimit:120</span>
-            <span class="label label-primary"> ArpCode:"100.99.98"</span>
-            <span class="label label-primary"> OHPCode:"M0123"</span>
+            <span class="label label-primary"> "FirstName":"Akın",</span>
+            <span class="label label-primary"> "LastName":"Işık",</span>
+            <span class="label label-primary"> "Email":"demo@masraff.co",</span>
+            <span class="label label-primary"> "ApproverUserEmail":approver@masraff.co,</span>
+            <span class="label label-primary"> "ApproverUserLimit":2,</span>
+            <span class="label label-primary"> "ApprovalLimit":120,</span>
+            <span class="label label-primary"> "ArpCode":"100.99.98",</span>
+            <span class="label label-primary"> "ExpenseCenter":"M0123",</span>
+            <span class="label label-primary"> "PersonnelCode":"P001"</span>
         <span class="label label-primary"> },</span>
     ...
     <span class="label label-primary"> ]</span>
@@ -1529,7 +1483,7 @@
                                         <pre>
 <code>
 <span class="label label-primary"> {</span>
-    <span class="label label-primary">"success": true</span>
+    <span class="label label-primary">"response": true</span>
 <span class="label label-primary">}</span>
 </code>
 </pre>
@@ -1594,8 +1548,3 @@
 </body>
 
 </html>
-
-
-
-<!-- 
- -->
