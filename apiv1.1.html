@@ -100,6 +100,14 @@
                                     <a href="#Company" onclick="clickSample('#Company')" style="color:black"> Company</a>
                                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                 </div>
+                                <ul class="submenuItems">
+                                    <li>
+                                        <a href="#Company" onclick="clickSample('#Company')">Create Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="#CompanySubscription" onclick="clickSample('#CompanySubscription')">Company subscription activation</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
                                 <div class="dropdownlink">
@@ -239,7 +247,7 @@
 
                                 <div class="col-md-6" style="background-color: #2f3640; height: 60%; padding-top: 3%;color:whitesmoke">
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/metadata"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/metadata"</code>
                                     </p>
                                     <p> -H
                                         <code>"Authorization: yourMasraffApiKey"</code>
@@ -299,7 +307,7 @@
                                 <div class="col-md-6" style="background-color: #2f3640; height: 66%;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/metadata/subcompany/3"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/metadata/subcompany/3"</code>
                                     </p>
                                     <p> -H
                                         <code>"Authorization: yourMasraffApiKey"</code>
@@ -358,7 +366,7 @@
                                 <div class="col-md-6" style="background-color: #2f3640; height: 112%; color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/expense/id"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/expense/id"</code>
                                     </p>
                                     <p> -H
                                         <code>"Authorization: yourMasraffApiKey"</code>
@@ -435,7 +443,7 @@
                                 <div class="col-md-6" style="background-color: #2f3640; height: 65%;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/expense/id/transfer"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/expense/id/transfer"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
@@ -489,7 +497,7 @@
                                 <div class="col-md-6" style="background-color: #2f3640; height: 135%;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/user/expenses/personnelCode"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/user/expenses/personnelCode"</code>
                                     </p>
                                     <p> -H
                                         <code>"Authorization: yourMasraffApiKey"</code>
@@ -572,7 +580,7 @@
 
                                 <div class="col-md-6" style="height: 53%;background-color: #2f3640;padding-top: 3%;color:whitesmoke">
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/report/id/complete"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/report/id/complete"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
@@ -664,7 +672,63 @@
 
                                 <div class="col-md-6" style="height: 53%;background-color: #2f3640;padding-top: 3%;color:whitesmoke">
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/company/create"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/company/create"</code>
+                                    </p>
+                                    <p> -X
+                                        <span style="font-weight: bold;">POST</span>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"response": true</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default" id="CompanySubscription">
+                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Activate company subscription</div>
+                        <div class="panel-body">
+                            <div style="width:100%;float: left;margin-top:-1.38%;">
+                                <div class="col-md-6" style="padding-top: 3%">
+                                    <p style="font-size: 20px;font-weight: bold;" id="CompanySubscription">Activate company subscription</p>
+                                    <p>This endpoint activating company subscription with given information</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>POST api.masraff.co/v1.1/integration/company/subscription?email=emailaddress</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td>The email of the company</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-6" style="height: 53%;background-color: #2f3640;padding-top: 3%;color:whitesmoke">
+                                    <p>curl
+                                        <code>"https://api.masraff.co/v1.1/integration/company/subscription?email=emailaddress"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
@@ -703,7 +767,7 @@
 
                                 <div class="col-md-6" style="height: 70%;background-color: #2f3640;padding-top:3%;color:whitesmoke">
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/tag/taglist"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/tag/taglist"</code>
                                     </p>
                                     <p> -H
                                         <code>"Authorization: yourMasraffApiKey"</code>
@@ -787,7 +851,7 @@
                                 <div class="col-md-6" style="height: 105%;background-color: #2f3640;;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/tag/create"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/tag/create"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
@@ -873,7 +937,7 @@
                                 <div class="col-md-6" style="height: 110.7%;background-color: #2f3640;;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/tag/update"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/tag/update"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
@@ -915,7 +979,7 @@
 
                                 <div class="col-md-6" style="height: 65%;background-color: #2f3640;padding-top:3%;color:whitesmoke">
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/subCompany/list"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/subCompany/list"</code>
                                     </p>
                                     <p> -H
                                         <code>"Authorization: yourMasraffApiKey"</code>
@@ -996,7 +1060,7 @@
                                 <div class="col-md-6" style="height: 103.5%;background-color: #2f3640;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/subCompany/create"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/subCompany/create"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
@@ -1082,7 +1146,7 @@
                                 <div class="col-md-6" style="height: 110.9%;background-color: #2f3640;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/subCompany/update"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/subCompany/update"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
@@ -1124,7 +1188,7 @@
 
                                 <div class="col-md-6" style="height: 80%;background-color: #2f3640;padding-top: 3%;color:whitesmoke">
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/expenseTypes/list"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/expenseTypes/list"</code>
                                     </p>
                                     <p> -H
                                         <code>"Authorization: yourMasraffApiKey"</code>
@@ -1176,7 +1240,7 @@
                                     <p>
                                         <p style="font-size: 13px;font-weight: bold;">MainExpenseTypeList in Masraff
                                             system</p>
-                                        <code style="color:gray">http://api.masraff.co/v1.1/integration/mainExpenseType/list</code>
+                                        <code style="color:gray">https://api.masraff.co/v1.1/integration/mainExpenseType/list</code>
                                     </p>
                                     <br>
                                     <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
@@ -1249,7 +1313,7 @@
                                 <div class="col-md-6" style="height: 164.1%;background-color: #2f3640;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/expenseType/create"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/expenseType/create"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
@@ -1344,7 +1408,7 @@
                                 <div class="col-md-6" style="height: 137%;background-color: #2f3640;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/expenseType/update"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/expenseType/update"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
@@ -1386,7 +1450,7 @@
 
                                 <div class="col-md-6" style="height: 85%;background-color: #2f3640;padding-top:3%;color:whitesmoke">
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/user/list"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/user/list"</code>
                                     </p>
                                     <p> -H
                                         <code>"Authorization: yourMasraffApiKey"</code>
@@ -1525,7 +1589,7 @@
                                 <div class="col-md-6" style="height: 165.5%;background-color: #2f3640;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/user/create"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/user/create"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
@@ -1598,7 +1662,7 @@
                                 <div class="col-md-6" style="height: 100%;background-color: #2f3640;color:whitesmoke">
                                     <hr>
                                     <p>curl
-                                        <code>"http://api.masraff.co/v1.1/integration/userSubCompany/add"</code>
+                                        <code>"https://api.masraff.co/v1.1/integration/userSubCompany/add"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
