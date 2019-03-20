@@ -107,6 +107,9 @@
                                     <li>
                                         <a href="#CompanySubscription" onclick="clickSample('#CompanySubscription')">Company subscription activation</a>
                                     </li>
+                                    <li>
+                                        <a href="#AddCompanyCustomFieldValue" onclick="clickSample('#AddCompanyCustomFieldValue')">Add Company Custom Field Value</a>
+                                    </li>
                                 </ul>
                             </li>
                             <li>
@@ -729,6 +732,78 @@
                                 <div class="col-md-6" style="height: 53%;background-color: #2f3640;padding-top: 3%;color:whitesmoke">
                                     <p>curl
                                         <code>"https://api.masraff.co/v1.1/integration/company/subscription?email=emailaddress"</code>
+                                    </p>
+                                    <p> -X
+                                        <span style="font-weight: bold;">POST</span>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:</p>
+                                    <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"response": true</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default" id="AddCompanyCustomFieldValue">
+                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Add company custom field value</div>
+                        <div class="panel-body">
+                            <div style="width:100%;float: left;margin-top:-1.38%;">
+                                <div class="col-md-6" style="padding-top: 3%">
+                                    <p style="font-size: 20px;font-weight: bold;" id="AddCompanyCustomFieldValue">Add custom field value</p>
+                                    <p>This endpoint creating custom field value with given information</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>POST api.masraff.co/v1.1/integration/company/addCustomFieldValue</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>FieldId</td>
+                                                <td>
+                                                    <span class="label label-primary">string</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Values</td>
+                                                <td>
+                                                    List<<span class="label label-primary">string</span>>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>ExpenseTypes </td>
+                                                <td>
+                                                    List<<span class="label label-primary">string</span>>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-6" style="height: 53%;background-color: #2f3640;padding-top: 3%;color:whitesmoke">
+                                    <p>curl
+                                        <code>"https://api.masraff.co/v1.1/integration/company/addCustomFieldValues"</code>
                                     </p>
                                     <p> -X
                                         <span style="font-weight: bold;">POST</span>
