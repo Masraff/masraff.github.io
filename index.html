@@ -108,6 +108,10 @@
                                         <a href="#CreateCustomForm" onclick="clickSample('#CreateCustomForm')">Create
                                             Custom Form</a>
                                     </li>
+                                    <li>
+                                        <a href="#GetCustomForm" onclick="clickSample('#GetCustomForm')">Get
+                                            Custom Form</a>
+                                    </li>
                                 </ul>
                             </li>
                             <li>
@@ -773,6 +777,81 @@
                         </div>
                     </div>
 
+                    <div class="panel panel-default" id="GetCustomForm">
+                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Get Custom Report</div>
+                        <div class="panel-body">
+                            <div style="width:100%;float: left;margin-top:-1.38%;">
+                                <div class="col-md-6" style="padding-top: 3%">
+                                    <p style="font-size: 20px;font-weight: bold;">Get Custom Report</p>
+                                    <p>This endpoint get specific custom report.</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>POST api.masraff.co/v1.1/integration/report/getCustomReport/{reportId}</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>reportId</td>
+                                                <td>The ID of custom form in Masraff system.
+                                                    <span class="label label-primary">int</span>
+                                                    <code>(notnullable)</code>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                </div>
+
+                                <div class="col-md-6"
+                                    style="height: 53%;background-color: #2f3640;padding-top: 3%;color:whitesmoke">
+                                    <p>curl
+                                        <code>"https://api.masraff.co/v1.1/integration/report/getCustomReport/{reportId}"</code>
+                                    </p>
+                                    <p> -X
+                                        <span style="font-weight: bold;">GET</span>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:
+                                    </p>
+                                    <pre>
+<code>
+<span class="label label-primary"> {</span>
+    <span class="label label-primary">"response": {</span>
+    <span class="label label-primary">"Id":1,</span>
+    <span class="label label-primary">"Name":"ReportName",</span>
+    <span class="label label-primary">"SubCompanyName":"SubCompanyName",</span>
+    <span class="label label-primary">"Status":"ReportStatus",</span>
+    <span class="label label-primary">"CustomValues":[</span>
+        <span class="label label-primary">{</span>
+            <span class="label label-primary">"FieldName":"FieldName",</span>
+            <span class="label label-primary">"FieldValue":"FieldValue",</span>
+            <span class="label label-primary">"FieldValueType":"FieldValueType"</span>
+        <span class="label label-primary">}</span>
+        <span class="label label-primary">...</span>
+    <span class="label label-primary">],</span>
+    <span class="label label-primary">"ReportOwner":"ReportOwner",</span>
+    <span class="label label-primary"> }</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="panel panel-default" id="Company">
                         <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Create Company</div>
