@@ -85,6 +85,11 @@
                                             Details</a>
                                     </li>
                                     <li>
+                                            <a href="#SpecificExpenseWithCustomFields" onclick="clickSample('#SpecificExpenseWithCustomFields')">Get a
+                                                Specific Expense
+                                                Details With Custom Fields</a>
+                                    </li>
+                                    <li>
                                         <a href="#ExpenseTransfer" onclick="clickSample('#ExpenseTransfer')">Mark a
                                             Specific Expense
                                             Transfered</a>
@@ -97,13 +102,30 @@
                             </li>
                             <li>
                                 <div class="dropdownlink">
-                                    <a style="color:black"> Forms</a>
+                                    <a style="color:black">Expense Forms</a>
                                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                                 </div>
                                 <ul class="submenuItems">
                                     <li>
-                                        <a href="#Reports" onclick="clickSample('#Reports')">Expense Forms</a>
+                                        <a href="#ReportMetadata" onclick="clickSample('#ReportMetadata')">Get Expense Form Metadata For Company</a>
                                     </li>
+                                    <li>
+                                            <a href="#ReportMetadataSubCompany" onclick="clickSample('#ReportMetadataSubCompany')">Get Expense Form Metadata For SubCompany</a>
+                                    </li>
+                                    <li>
+                                            <a href="#SpecificReport" onclick="clickSample('#SpecificReport')">Get a Specific Expense Form Details</a>
+                                    </li>
+                                    <li>
+                                            <a href="#ReportComplate" onclick="clickSample('#ReportComplate')">Mark a Specific Expense Form Complete</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="dropdownlink">
+                                    <a style="color:black"> Forms</a>
+                                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                </div>
+                                <ul class="submenuItems">
                                     <li>
                                         <a href="#CreateCustomForm" onclick="clickSample('#CreateCustomForm')">Create
                                             Custom Form</a>
@@ -471,6 +493,92 @@
                                 </div>
                             </div>
 
+
+                            <div style="width:100%;float: left;">
+                                <div class="col-md-6">
+                                    <hr>
+                                    <p style="font-size: 20px;font-weight: bold;" id="SpecificExpenseWithCustomFields">Get a Specific
+                                        Expense Details With Custom Fields</p>
+                                    <p>This endpoint retrieves a specific expense details that is not marked as transfered.</p>
+                                    <br>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                    <p>
+                                        <code>GET api.masraff.co/v1.1/integration/expense/Id/detail</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Parameter</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Id</td>
+                                                <td>The ID of expense retrieved from metadata</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-6" style="background-color: #2f3640; height: 112%; color:whitesmoke">
+                                    <hr>
+                                    <p>curl
+                                        <code>"https://api.masraff.co/v1.1/integration/expense/id/detail"</code>
+                                    </p>
+                                    <p> -H
+                                        <code>"Authorization: yourMasraffApiKey"</code>
+                                    </p>
+                                    <br>
+                                    <p style="font-weight: bold">The above command returns JSON structured like this:
+                                    </p>
+                                    <pre>
+<code>                
+<span class="label label-primary"> {</span>
+    <span class="label label-primary"> "Id": 665,</span> <span class="label label-success">Id of expense in Masraff system</span>
+    <span class="label label-primary"> "UserId": 5,</span> <span class="label label-success">Id of User in Masraff system</span>
+    <span class="label label-primary"> "ReportId": 195,</span> <span class="label label-success">Id of report in Masraff system</span>
+    <span class="label label-primary"> "CompanyId": 1,</span> <span class="label label-success">Id of company in Masraff system, not subcompany</span>
+    <span class="label label-primary"> "CurrencyType": "TL",</span> <span class="label label-success">Id of report in Masraff system</span>
+    <span class="label label-primary"> "ExpenseDate": "20171026",</span>
+    <span class="label label-primary"> "CreateDate": "20171025",</span>
+    <span class="label label-primary"> "Amount": 200,</span>
+    <span class="label label-primary"> "TaxPercentage": 18,</span>
+    <span class="label label-primary"> "TaxPercentageCode": "V1",</span> <span class="label label-success">Integration code for Tax Percentage</span>
+    <span class="label label-primary"> "PersonnelCode": "P00023",</span>
+    <span class="label label-primary"> "SubcompanyId": 1,</span> <span class="label label-success">Id of subcompany in Masraff system. If none returns null</span>
+    <span class="label label-primary"> "SubcompanyCode": "AA-123",</span>
+    <span class="label label-primary"> "TaxAmount": 30.51,</span> 
+    <span class="label label-primary"> "ExpenseTypeId": 3,</span> <span class="label label-success">category id of expense</span>
+    <span class="label label-primary"> "IntegrationCode": "OTL123A",</span> <span class="label label-success">Integration code of expense type</span>
+    <span class="label label-primary"> "Note": "notes-on-expense",</span>
+    <span class="label label-primary"> "ImageURL": "url-for-image-file",</span>
+    <span class="label label-primary"> "Merchant": "XX RESTAURANT",</span>
+    <span class="label label-primary"> "AccountCode": "12.511.12",</span>
+    <span class="label label-primary"> "TaxAccountCode": "",</span>
+    <span class="label label-primary"> "UserOHPCode": "AAA",</span>
+    <span class="label label-primary"> "UserArpCode": "12.123.1234",</span>
+    <span class="label label-primary"> "TagName": "İş Yemeği",</span>
+    <span class="label label-primary"> "Reimbursable": true,</span>
+    <span class="label label-primary"> "Billable": false,</span>
+    <span class="label label-primary"> "CustomCode": "111",</span>
+    <span class="label label-primary"> "CustomFields": [</span>
+        <span class="label label-primary">{</span>
+            <span class="label label-primary"> "FieldName": "MasrafTest",</span>
+            <span class="label label-primary"> "FieldValue": "Value",</span>
+            <span class="label label-primary"> "FieldValueType": "String"</span>
+        <span class="label label-primary"> }</span>
+    <span class="label label-primary"> ]</span>
+<span class="label label-primary">}</span>
+</code>
+</pre>
+
+                                </div>
+                            </div>
+
                             <div style="width:100%;float: left;">
                                 <div class="col-md-6">
                                     <hr>
@@ -610,11 +718,11 @@
                         </div>
                     </div>
                     <div class="panel panel-default" id="Reports">
-                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Expense Form</div>
+                        <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Expense Forms</div>
                         <div class="panel-body">
                             <div style="width:100%;float: left;margin-top:-1.38%;">
                                 <div class="col-md-6" style="padding-top: 3%">
-                                    <p style="font-size: 20px;font-weight: bold;" id="ExpenseTransfer">Mark a Specific
+                                    <p style="font-size: 20px;font-weight: bold;" id="ReportComplate">Mark a Specific
                                         Expense Form Complete</p>
                                     <p>This endpoint marks a specific expense form complete.</p>
                                     <br>
@@ -665,9 +773,195 @@
 
                                 </div>
                             </div>
+                            <div style="width:100%;float: left;">
+                                    <div class="col-md-6">
+                                        <hr>
+                                        <p style="font-size: 20px;font-weight: bold;" id="ReportMetadata">Get Expense Form
+                                            Metadata For Company</p>
+                                        <p>This endpoint returns all untransferred expense form ids and count of company</p>
+                                        <p>This endpoint retrieves all unfetched expense form metada.</p>
+                                        <br>
+                                        <br>
+                                        <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                        <p>
+                                            <code>GET api.masraff.co/v1.1/integration/metadata/report</code>
+                                        </p>
+                                        <br>
+                                    </div>
+    
+                                    <div class="col-md-6" style="background-color: #2f3640; height: 66%;color:whitesmoke">
+                                        <hr>
+                                        <p>curl
+                                            <code>"https://api.masraff.co/v1.1/integration/metadata"</code>
+                                        </p>
+                                        <p> -H
+                                            <code>"Authorization: yourMasraffApiKey"</code>
+                                        </p>
+                                        <br>
+                                        <p style="font-weight: bold">The above command returns JSON structured like this:
+                                        </p>
+                                        <pre>
+    <code>
+                    
+    <span class="label label-primary"> {</span>
+        <span class="label label-primary"> "reports": [</span>
+            <span class="label label-primary"> 12,</span>
+            <span class="label label-primary"> 23,</span>
+            <span class="label label-primary"> 44,</span>
+            <span class="label label-primary"> 65,</span>
+            <span class="label label-primary"> 86</span>
+        <span class="label label-primary"> ],</span>
+        <span class="label label-Danger"> "count": 5</span>
+    <span class="label label-primary"> }</span>
+    </code>
+     </pre>
+    
+                                    </div>
+                                </div>
+    
+
+
+                                <div style="width:100%;float: left;">
+                                        <div class="col-md-6">
+                                            <hr>
+                                            <p style="font-size: 20px;font-weight: bold;" id="ReportMetadataSubCompany">Get Expense Form
+                                                Metadata For SubCompany</p>
+                                            <p>This endpoint returns all untransferred expense form ids and count of subcompany</p>
+                                            <p>This endpoint retrieves all unfetched expense form metada.</p>
+                                            <br>
+                                            <br>
+                                            <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                            <p>
+                                                <code>GET api.masraff.co/v1.1/integration/metadata/report/subcompany/subcompanyId</code>
+                                            </p>
+                                            <br>
+                                            <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Parameter</th>
+                                                        <th>Description</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>SubcompanyID</td>
+                                                        <td>The ID of subcompany in Masraff System</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+        
+                                        <div class="col-md-6" style="background-color: #2f3640; height: 66%;color:whitesmoke">
+                                            <hr>
+                                            <p>curl
+                                                <code>"https://api.masraff.co/v1.1/integration/metadata/report/subcompany/3"</code>
+                                            </p>
+                                            <p> -H
+                                                <code>"Authorization: yourMasraffApiKey"</code>
+                                            </p>
+                                            <br>
+                                            <p style="font-weight: bold">The above command returns JSON structured like this:
+                                            </p>
+                                            <pre>
+        <code>
+                        
+        <span class="label label-primary"> {</span>
+            <span class="label label-primary"> "reports": [</span>
+                <span class="label label-primary"> 12,</span>
+                <span class="label label-primary"> 23,</span>
+                <span class="label label-primary"> 44,</span>
+                <span class="label label-primary"> 65,</span>
+                <span class="label label-primary"> 86</span>
+            <span class="label label-primary"> ],</span>
+            <span class="label label-Danger"> "count": 5</span>
+        <span class="label label-primary"> }</span>
+        </code>
+         </pre>
+        
+                                        </div>
+                                    </div>
+
+                                    <div style="width:100%;float: left;">
+                                            <div class="col-md-6">
+                                                <hr>
+                                                <p style="font-size: 20px;font-weight: bold;" id="SpecificReport">Get a Specific
+                                                    Expense Form Details</p>
+                                                <p>This endpoint retrieves a specific expense form that is not marked as transfered.</p>
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 20px;font-weight: bold;">HTTP Request</p>
+                                                <p>
+                                                    <code>GET api.masraff.co/v1.1/integration/report/Id</code>
+                                                </p>
+                                                <br>
+                                                <p style="font-size: 20px;font-weight: bold;">URL Parameters</p>
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Parameter</th>
+                                                            <th>Description</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Id</td>
+                                                            <td>The ID of expense form retrieved from metadata</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+            
+                                            <div class="col-md-6" style="background-color: #2f3640; height: 112%; color:whitesmoke">
+                                                <hr>
+                                                <p>curl
+                                                    <code>"https://api.masraff.co/v1.1/integration/report/id"</code>
+                                                </p>
+                                                <p> -H
+                                                    <code>"Authorization: yourMasraffApiKey"</code>
+                                                </p>
+                                                <br>
+                                                <p style="font-weight: bold">The above command returns JSON structured like this:
+                                                </p>
+                                                <pre>
+            <code>                
+            <span class="label label-primary"> {</span>
+                <span class="label label-primary"> "Id": 665,</span> <span class="label label-success">Id of expense in Masraff system</span>
+                <span class="label label-primary"> "UserId": 5,</span> <span class="label label-success">Id of User in Masraff system</span>
+                <span class="label label-primary"> "ReportId": 195,</span> <span class="label label-success">Id of report in Masraff system</span>
+                <span class="label label-primary"> "CompanyId": 1,</span> <span class="label label-success">Id of company in Masraff system, not subcompany</span>
+                <span class="label label-primary"> "CurrencyType": "TL",</span> <span class="label label-success">Id of report in Masraff system</span>
+                <span class="label label-primary"> "ExpenseDate": "20171026",</span>
+                <span class="label label-primary"> "CreateDate": "20171025",</span>
+                <span class="label label-primary"> "Amount": 200,</span>
+                <span class="label label-primary"> "TaxPercentage": 18,</span>
+                <span class="label label-primary"> "TaxPercentageCode": "V1",</span> <span class="label label-success">Integration code for Tax Percentage</span>
+                <span class="label label-primary"> "PersonnelCode": "P00023",</span>
+                <span class="label label-primary"> "SubcompanyId": 1,</span> <span class="label label-success">Id of subcompany in Masraff system. If none returns null</span>
+                <span class="label label-primary"> "SubcompanyCode": "AA-123",</span>
+                <span class="label label-primary"> "TaxAmount": 30.51,</span> 
+                <span class="label label-primary"> "ExpenseTypeId": 3,</span> <span class="label label-success">category id of expense</span>
+                <span class="label label-primary"> "IntegrationCode": "OTL123A",</span> <span class="label label-success">Integration code of expense type</span>
+                <span class="label label-primary"> "Note": "notes-on-expense",</span>
+                <span class="label label-primary"> "ImageURL": "url-for-image-file",</span>
+                <span class="label label-primary"> "Merchant": "XX RESTAURANT",</span>
+                <span class="label label-primary"> "AccountCode": "12.511.12",</span>
+                <span class="label label-primary"> "TaxAccountCode": "",</span>
+                <span class="label label-primary"> "UserOHPCode": "AAA",</span>
+                <span class="label label-primary"> "UserArpCode": "12.123.1234",</span>
+                <span class="label label-primary"> "TagName": "İş Yemeği",</span>
+                <span class="label label-primary"> "Reimbursable": true,</span>
+                <span class="label label-primary"> "Billable": false</span>
+                <span class="label label-primary"> "CustomCode": "111"</span>
+            <span class="label label-primary">}</span>
+            </code>
+            </pre>
+            
+                                            </div>
+                                        </div>
+            
                         </div>
                     </div>
-
 
                     <div class="panel panel-default" id="CreateCustomForm">
                         <div class="panel-heading" style="font-size: 20px;font-weight: bold;">Create Custom Report</div>
