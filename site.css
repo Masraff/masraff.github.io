@@ -1,5 +1,25 @@
-*{margin:0;padding:0}
-body{ font-family:arial}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background-color:#f4f5fb;
+    color:#2c3e50;
+}
+
+.navbar.navbar-default{
+    background-color:#ffffff;
+    border:none;
+    box-shadow:0 2px 4px rgba(0,0,0,0.06);
+}
+
+.navbar-default .navbar-brand{
+    font-weight:600;
+    font-size:18px;
+    color:#2c3e50;
+}
+
+.navbar-default .navbar-nav>li>a{
+    font-size:14px;
+}
 
 #nav {
     float: left;
@@ -48,7 +68,8 @@ ul {
     width: auto;
     max-width: 250px;
     background: #fff;
-    border-radius: 4px;
+    border-radius: 6px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.06);
   }
   
   .accordion-menu li.open .dropdownlink {
@@ -65,14 +86,20 @@ ul {
   
   .dropdownlink {
     cursor: pointer;
-    display: block;
-    padding: 15px 15px 15px 45px;
-    font-size: 18px;
-    border-bottom: 1px solid #ccc;
-    color: #212121;
+    display: flex;
+    align-items: center;
+    gap:8px;
+    padding: 14px 16px 14px 42px;
+    font-size: 16px;
+    border-bottom: 1px solid #e1e5ee;
+    color: #2c3e50;
     position: relative;
-    -webkit-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
+    -webkit-transition: background-color 0.25s ease-out,color 0.25s ease-out;
+    transition: background-color 0.25s ease-out,color 0.25s ease-out;
+  }
+
+  .dropdownlink:hover{
+    background-color:#f2f4fb;
   }
   .dropdownlink i {
     position: absolute;
@@ -87,6 +114,7 @@ ul {
   .submenuItems {
     display: none;
     text-decoration: none;
+    background-color:#fafbff;
   }
   .submenuItems li {
     border-bottom: 1px solid #B6B6B6;
@@ -94,17 +122,57 @@ ul {
   
   .submenuItems a {
     display: block;
-    color: #727272;
-    padding: 12px 12px 12px 45px;
-    -webkit-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
+    color: #636e72;
+    padding: 10px 12px 10px 48px;
+    font-size:14px;
+    -webkit-transition: background-color 0.25s ease-out,color 0.25s ease-out;
+    transition: background-color 0.25s ease-out,color 0.25s ease-out;
   }
   .submenuItems a:hover {
-    color: black;
+    color: #2d3436;
+    background-color:#ecf0ff;
   }
 
   .scrollable-menu {
     height: auto;
-    max-height: 350px;
+    max-height: 80vh;
     overflow-x: hidden;
+}
+
+.panel{
+    border-radius:8px;
+    border:1px solid #e1e5ee;
+    box-shadow:0 2px 6px rgba(0,0,0,0.03);
+}
+
+.panel-heading{
+    background:linear-gradient(90deg,#f7f8fc,#eef1fb);
+    border-bottom:1px solid #e1e5ee;
+}
+
+.panel-body{
+    background-color:#ffffff;
+    line-height:1.6;
+    font-size:14px;
+}
+
+code{
+    font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+    font-size:12px;
+    background-color:#f1f3f8;
+    padding:2px 4px;
+    border-radius:3px;
+}
+
+pre{
+    background-color:#2f3640;
+    color:#ecf0f1;
+    border-radius:4px;
+    padding:10px 12px;
+    overflow-x:auto;
+}
+
+pre code{
+    background-color:transparent;
+    padding:0;
 }
